@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3AD75BC6-020A-4718-BFEB-7B6D32A23812}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ArxFileValidator</RootNamespace>
+    <AssemblyName>ArxFileValidator</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analyzer.cs" />
+    <Compile Include="ArrayHelper.cs" />
+    <Compile Include="ArxNative\IO\ArxIO.cs" />
+    <Compile Include="ArxNative\IO\ArxIOHelper.cs" />
+    <Compile Include="ArxNative\IO\DLF\DLF_IO.cs" />
+    <Compile Include="ArxNative\IO\DLF\DLF_IO_FOG.cs" />
+    <Compile Include="ArxNative\IO\DLF\DLF_IO_HEADER.cs" />
+    <Compile Include="ArxNative\IO\DLF\DLF_IO_INTER.cs" />
+    <Compile Include="ArxNative\IO\DLF\DLF_IO_PATH.cs" />
+    <Compile Include="ArxNative\IO\DLF\DLF_IO_PATHWAYS.cs" />
+    <Compile Include="ArxNative\IO\DLF\DLF_IO_PATH_HEADER.cs" />
+    <Compile Include="ArxNative\IO\DLF\DLF_IO_SCENE.cs" />
+    <Compile Include="ArxNative\IO\DLF\DLF_IO_VLIGHTING.cs" />
+    <Compile Include="ArxNative\IO\FTL\EERIE_ACTIONLIST_FTL.cs" />
+    <Compile Include="ArxNative\IO\FTL\EERIE_FACE_FTL.cs" />
+    <Compile Include="ArxNative\IO\FTL\EERIE_GROUP_FTL.cs" />
+    <Compile Include="ArxNative\IO\FTL\EERIE_OLD_VERTEX.cs" />
+    <Compile Include="ArxNative\IO\FTL\EERIE_SELECTIONS_FTL.cs" />
+    <Compile Include="ArxNative\IO\FTL\FTL_IO.cs" />
+    <Compile Include="ArxNative\IO\FTL\FTL_IO_3D_DATA_GROUP.cs" />
+    <Compile Include="ArxNative\IO\FTL\FTL_IO_3D_DATA_HEADER.cs" />
+    <Compile Include="ArxNative\IO\FTL\FTL_IO_3D_DATA_SECTION.cs" />
+    <Compile Include="ArxNative\IO\FTL\FTL_IO_3D_DATA_SELECTION.cs" />
+    <Compile Include="ArxNative\IO\FTL\FTL_IO_PRIMARY_HEADER.cs" />
+    <Compile Include="ArxNative\IO\FTL\FTL_IO_SECONDARY_HEADER.cs" />
+    <Compile Include="ArxNative\IO\FTL\FTL_IO_TEXTURE_CONTAINER.cs" />
+    <Compile Include="ArxNative\IO\FTS\EERIE_IO_EERIEPOLY.cs" />
+    <Compile Include="ArxNative\IO\FTS\EERIE_IO_PORTALS.cs" />
+    <Compile Include="ArxNative\IO\FTS\EERIE_IO_ROOM_DATA.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO_ANCHOR.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO_ANCHOR_DATA.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO_CELL.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO_EERIEPOLY.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO_EP_DATA.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO_ROOM.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO_ROOM_DIST_DATA.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO_SCENE_HEADER.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO_SCENE_INFO.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO_TEXTURE_CONTAINER.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO_UNIQUE_HEADER.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO_UNIQUE_HEADER2.cs" />
+    <Compile Include="ArxNative\IO\FTS\FTS_IO_VERTEX.cs" />
+    <Compile Include="ArxNative\IO\LLF\LLF_IO.cs" />
+    <Compile Include="ArxNative\IO\LLF\LLF_IO_HEADER.cs" />
+    <Compile Include="ArxNative\IO\Shared_IO\DANAE_IO_LIGHT.cs" />
+    <Compile Include="ArxNative\IO\Shared_IO\DANAE_IO_LIGHTINGHEADER.cs" />
+    <Compile Include="ArxNative\IO\Shared_IO\SavedTypes.cs" />
+    <Compile Include="ArxNative\PolyType.cs" />
+    <Compile Include="DLFAnalyzer.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FTLAnalyzer.cs" />
+    <Compile Include="FTSAnalyzer.cs" />
+    <Compile Include="LLFAnalyzer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StructReader.cs" />
+    <Compile Include="StructWriter.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
