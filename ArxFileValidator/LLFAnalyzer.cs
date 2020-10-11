@@ -8,7 +8,8 @@ namespace ArxFileValidator
 {
 	public class LLFAnalyzer : Analyzer
 	{
-		const float version = 0.003f;
+		const float version = 1.44f;
+		const string identifier = "DANAE_LLH_FILE";
 
 		bool AnalyzeHeader(LLF_IO_HEADER header)
 		{
@@ -20,10 +21,10 @@ namespace ArxFileValidator
 				}
 			}
 
-			string id = new string(header.identifier);
-			if (id != "LLF")
+			string id = new string(header.identifier).Trim('\0'); //TODO: fix 0 byte problem, we have to check no trailing characters were read
+			if (!id.Equals(identifier))
 			{
-				if (!Err("Identifier is wrong, expected LLF but got " + id))
+				if (!Err("Identifier is wrong, expected '" + identifier + "' but got '" + id + "'"))
 				{
 					return false;
 				}
